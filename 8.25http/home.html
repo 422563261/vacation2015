@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>home</title>
+	<style>
+		body{
+			animation:myway 2s;
+			animation-fill-mode:forwards;
+		}
+		@keyframes myway{
+			from{background:#fff;color: #000000;}
+			to{background: #694444;color: #fff;}
+		}
+		h1,h4{
+			text-align: center;
+			margin-top: 25px;
+		}
+		.title{
+			font-size: 50px;
+		}
+		.bathroom{
+			width: 120px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			border:1px solid #000000;
+			border-radius: 20px;
+			position: relative;
+			top:50px;
+			transition:background 0.5s;
+			animation:change 2s; 
+			animation-fill-mode:forwards;
+			cursor: pointer;
+		}
+		.bathroom:hover{
+			background: #4c2626;
+
+		}
+		@keyframes change{
+			from{border:1px solid #000000;left: 0}
+			to{border:1px solid #fff;left: 50%;margin-left: -60px;}
+		}
+	</style>
+</head>
+<body>
+	<h1 class="title">WELCOME</h1>
+	<h4>TO MY</h4>
+	<h1>HOME</h1>
+	<div class="bathroom" id="bathroom">bathroom</div>
+</body>
+<script>
+	window.onload = function(){
+	    var obj = document.getElementById('bathroom');
+	    obj.onclick=function(){  
+	        window.location.href="/bathroom";            
+	     }
+ }
+</script>
+</html>

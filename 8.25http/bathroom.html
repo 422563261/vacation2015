@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bathroom</title>
+	<style>
+		body{
+			/*color: #fff;*/
+			animation:myway 2s;
+			animation-fill-mode:forwards;
+		}
+		@keyframes myway{
+			from{background:#fff;}
+			to{background: #159cce;}
+		}
+		h1,h4{
+			text-align: center;
+			margin-top: 25px;
+		}
+		.title{
+			font-size: 50px;
+		}
+		.container{
+			position: relative;
+			animation:come 2s;
+			animation-fill-mode:forwards;
+		}
+		@keyframes come{
+			0%{top:0;}
+			25%{top: 50px;}
+			50%{top: 15px;}
+			100%{top: 30px;}
+		}
+		.home{
+			width: 120px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			border:1px solid #000000;
+			border-radius: 20px;
+			position: relative;
+			margin: 100px auto;
+			transition:background 0.5s;
+			animation:change 2s; 
+			animation-fill-mode:forwards;
+			cursor: pointer;
+		}
+		.home:hover{
+			background: #5ac1e7;
+		}
+		@keyframes change{
+			from{
+				width: 0px;
+				height: 0px;
+			}
+			to{
+				width: 120px;
+				height: 40px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1 class="title">WELCOME</h1>
+		<h4>TO MY</h4>
+		<h1>BATHROOM</h1>
+	</div>
+	
+	<div class="home" id="home">home</div>
+</body>
+<script>
+	window.onload = function(){
+	    var obj = document.getElementById('home');
+	    obj.onclick = function(){  
+	        window.location.href="/";            
+	    }
+	}
+</script>
+</html>
