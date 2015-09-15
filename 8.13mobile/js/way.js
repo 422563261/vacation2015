@@ -1,36 +1,120 @@
-var list = document.getElementById('list');
-var choose = document.getElementById('choose');
-var dark = document.getElementById('dark');
-var sure = document.getElementById('sure');
-var cancel = document.getElementById('cancel');
-var kind = document.getElementById('kind');
-var choose_container = document.getElementById('choose_container')
+$(document).ready(function(){
+	var type,way,sexy,pay,time;
+	type = 1;way = 1;sexy = 1;pay = 1;time = 1;
+	$("#first").click(function(){
+		$("#first").attr("class","box box_active");
+		$("#find").attr("class","box");
+		$("#message").attr("class","box");
+		$("#me").attr("class","box");
 
-
-list.addEventListener('touchend',function(){
-	choose.style.marginLeft = "50%";
-	dark.style.width = "100%";
-    dark.style.height = "100%";
+	});
+	$("#find").click(function(){
+		$("#first").attr("class","box");
+		$("#find").attr("class","box box_active");
+		$("#message").attr("class","box");
+		$("#me").attr("class","box");
+	});
+	$("#message").click(function(){
+		$("#message").attr("class","box box_active");
+		$("#find").attr("class","box");
+		$("#first").attr("class","box");
+		$("#me").attr("class","box");
+	});
+	$("#me").click(function(){
+		$("#me").attr("class","box box_active");
+		$("#find").attr("class","box");
+		$("#message").attr("class","box");
+		$("#first").attr("class","box");
+	});
+	$(".list").click(function(){
+		$(".hide").animate({
+			width:"100%"
+		});
+		$(".hide_list").animate({
+			left:"50%"
+		});
+		$(".choose_boss").css("display","none");
+	});
+	$(".sure").click(function(){
+		$(".hide").animate({
+			width:"0"
+		});
+		$(".hide_list").animate({
+			left:"100%"
+		});
+		$(".choose_boss").css("display","none");
+		$(".kind").attr("src","img/kind.png");
+		type = 1;way = 1;sexy = 1;pay = 1;time = 1;
+	});
+	$(".cancel").click(function(){
+		$(".hide").animate({
+			width:"0"
+		});
+		$(".hide_list").animate({
+			left:"100%"
+		});
+		$(".kind").attr("src","img/kind.png");
+		type = 1;way = 1;sexy = 1;pay = 1;time = 1;
+	});
+	$("#type").click(function(){
+		$(".choose_type").fadeToggle();
+		if (type) {
+			$(".type").attr("src","img/kind_.png")
+			type = 0;
+		}
+		else{
+			$(".type").attr("src","img/kind.png")
+			type = 1;
+		}
+		
+	});
+	$("#way").click(function(){
+		$(".choose_way").fadeToggle();
+		if (way) {
+			$(".way").attr("src","img/kind_.png")
+			way = 0;
+		}
+		else{
+			$(".way").attr("src","img/kind.png")
+			way = 1;
+		}
+		
+	});
+	$("#sexy").click(function(){
+		$(".choose_sexy").fadeToggle();
+		if (sexy) {
+			$(".sexy").attr("src","img/kind_.png")
+			sexy = 0;
+		}
+		else{
+			$(".sexy").attr("src","img/kind.png")
+			sexy = 1;
+		}
+		
+	});
+	$("#pay").click(function(){
+		$(".choose_pay").fadeToggle();
+		if (pay) {
+			$(".pay").attr("src","img/kind_.png")
+			pay = 0;
+		}
+		else{
+			$(".pay").attr("src","img/kind.png")
+			pay = 1;
+		}
+		
+	});
+	$("#time").click(function(){
+		$(".choose_time").fadeToggle();
+		if (time) {
+			$(".time").attr("src","img/kind_.png")
+			time = 0;
+		}
+		else{
+			$(".time").attr("src","img/kind.png")
+			time = 1;
+		}
+		
+	});
 })
 
-cancel.addEventListener('touchend',function(){
-	choose.style.marginLeft = "100%";
-	dark.style.width = "0";
-    dark.style.height = "0";
-})
-
-sure.addEventListener('touchend',function(){
-	choose.style.marginLeft = "100%";
-	dark.style.width = "0";
-    dark.style.height = "0";
-})
-
-kind.addEventListener('touchend',function(){
-	
-	if (choose_container.style.display != "block") {
-		choose_container.style.display = "block";
-	}
-	else{
-		choose_container.style.display = "none";
-	}
-})

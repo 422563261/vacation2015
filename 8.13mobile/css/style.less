@@ -1,437 +1,288 @@
-html{font-size: 62.5%;}
-.header{
-	width: 100%;
-	height: 16%;
-	position: fixed;
-	z-index: 1000;
-	
-	.fun{
-		background: #f3f3f3;
-		width: 100%;
-		height: 50%;	
-		.fun_center{
-			width:91%;
-			height:100%;
-			margin:0 auto;
-			.title{
-				margin-top: 17px;
-				font-size: 2.5rem;
-				font-weight: bold;
-				float: left;
-			}
-			img{
-				width: 6.6%;
-				margin-top: 18.5px;
-				float: right;
-				}
-			.search,.write{
-				margin-right: 25.6px;
-			}
-		}
-	}
-	.nav{
-		background: #333333;
-		width: 100%;
-		height: 50%;
-		.nav_center{
-			width:91%;
-			height:100%;
-			margin:0 auto;
-			.box{
-				width: 17.8%;
-				height: 100%;
-				float: left;
-				color: #999999;
-				font-size: 2rem;
-				position: relative;
-				line-height: 51px;
-				text-align: center;
-			}
-			.box_active{
-				color: #ffd35c;
-			}
-			.box2,.box3,.box4{
-				margin-left: 9.4%;
-			}
-			.active{
-				width: 100%;
-				height: 6.2%;
-				background: #ffd35c;
-				position: absolute;
-				top: 93.8%;
-			}
-			.notice{
-				width: 13.6%;
-				height: 13.6%;
-				border-radius: 100%;
-				border: 1px solid #ff3c3c;
-				background: #ff3c3c;
-				position: absolute;
-				top: 10px;
-				left: 50px;
-			}
-		}
+html{
+	font-size: 62.5%;
+	@media screen and (max-width:320px) {
+		font-size: 55.5%;
 	}
 }
-#dark {
+body{font-family:  Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}
+.hide{
 	position: fixed;
-	background: rgba(0, 0, 0, 0.5);
-	z-index: 999;
-	width: 0;
-	height: 0;
 	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-	-webkit-transition: width .3s ease, height .3s ease;
-	transition: width .3s ease, height .3s ease;
+	width: 0;
+	height: 100%;
+	z-index: 2;
+	background: #333333;
+	opacity: 0.7;
 }
-.choose{
-	z-index: 1000;
-	background: #ffffff;
-	height: 92%;
-	width: 50%;
-	margin-left: 100%;
+.hide_list{
 	position: fixed;
-	bottom: 0;
-	transition: margin .3s ease;
-	.choose_head{
-		overflow: hidden;
+	height: 100%;
+	width: 50%;
+	right: 0;
+	left: 100%;
+	z-index: 3;
+	background: #fff;
+	overflow-x: scroll;
+	.tool{
 		width: 100%;
-		height: 11.9%;
-		.choose_head_fun{
-			overflow: hidden;
-			width: 100%;
+		height: 3.63rem;
+		line-height: 3.63rem;
+		div{
 			font-size: 1.5rem;
-			margin-top: 17px;
-			@media screen and (max-width:375px) {
-				margin-top: 14px;
-			}
-			@media screen and (max-width:360px){
-				margin-top: 10px;
-			}
-			@media screen and (max-width:320px) {
-				font-size: 1.3rem;
-				margin-top: 7px;
-			}
-			div{
-				width: 22.8%;
-				float: right;
-			}
-			.sure{
-				color: #8dda5e;
-			}
+			float: right;
 		}
-		.choose_head_kind{
-			overflow: hidden;
-			width: 100%;
-			margin-top: 17px;
-			div{float: left;}
-			@media screen and (max-width:375px) {
-				margin-top: 15px;
-			}
-			@media screen and (max-width:360px) {
-				margin-top: 13px;
-			}
-			@media screen and (max-width:320px) {
-				margin-top: 11px;
-			}
-			.word{
-				@media screen and (max-width:414px){
-					margin-left: 20px;
-					font-size: 2rem;
-					font-weight: bold;
-				}
-				@media screen and (max-width:375px) {
-					margin-left: 10px;
-					font-size: 2rem;
-					font-weight: bold;
-				}
-				@media screen and (max-width:360px) {
-					margin-left: 10px;
-					font-size: 1.9rem;
-					font-weight: bold;
-				}
-				@media screen and (max-width:320px){
-					margin-left: 7px;
-					font-size: 1.7rem;
-					font-weight: bold;
-				}
-				
-			}
-			.kind{
-				@media screen and (max-width:414px) {
-					width: 1.8rem;
-					height: 1.8rem;
-					margin-left: 20px;
-					background-image: url('img/kind.png');
-					background-size: 100% 100%;
-				}
-				@media screen and (max-width:375px) {
-					width: 1.6rem;
-					height: 1.6rem;
-					margin-left: 10px;
-					background-image: url('img/kind.png');
-					background-size: 100% 100%;
-				}
-				@media screen and (max-width:360px) {
-					width: 1.5rem;
-					height: 1.5rem;
-					margin-left: 10px;
-					background-image: url('img/kind.png');
-					background-size: 100% 100%;
-				}
-				@media screen and (max-width:320px) {
-					width: 1.4rem;
-					height: 1.4rem;
-					margin-left: 7px;
-					background-image: url('img/kind.png');
-					background-size: 100% 100%;
-				}
-			}
+		.sure{
+			color: #b8e79f;
+			margin-right: 1rem;
+
+		}
+		.cancel{
+			margin-right: 1.5rem;
 		}
 	}
-	.choose_container{
+	.choose{
 		width: 100%;
-		height: 45.6%;
-		background: #eeeeee;
+		height: 3.63rem;
+		line-height: 3.63rem;
+		border-bottom: 1px solid #cccccc;
+		box-sizing: border-box;
+		.words{
+			float: left;
+			font-size: 1.7rem;
+			margin-left: 0.8rem;
+		}
+		.type,.way,.sexy,.pay,.time{
+			float: right;
+			margin-right: 1rem;
+			margin-top: 1.42rem;
+			width:1.3rem;
+			height: 0.78rem;
+		}
+	}
+	.choose_boss{
 		display: none;
-		.choose_box{
-			width: 100%;
-			height: 12.2%;
+	}
+	.choose_box{
+		width: 100%;
+		height: 3.63rem;
+		line-height: 3.63rem;
+		border-bottom: 1px solid #cccccc;
+		background: #eeeeee;
+		box-sizing: border-box;
+		.words{
+			float: left;
 			font-size: 1.5rem;
-			line-height: 38.6px;
-			@media screen and (max-width:414px) {
-				margin-left: 20px
-			}
-			
-			@media screen and (max-width:320px) {
-				margin-left: 10px;
-				font-size: 1.3rem;
-				height: 12.1%;
-			}
-		}
-		.line{
-			width: 100%;
-			border-bottom: 1px solid #cccccc;
+			margin-left: 0.8rem;
 		}
 	}
-	.choose_way{
-		width: 100%;
-		height: 21.7%;
-		@media screen and (max-width:384px) {
-			height: 24%;
+
+}
+.head{
+	top:0;
+	width: 100%;
+	background: #f3f3f3;
+	position: fixed;
+	z-index: 1;
+	.head_container{
+		width: 91%;
+		height: 4rem;
+		line-height: 4rem;
+		margin: 0 auto;
+		.yue{
+			float: left;
+			font-size: 2.5rem;
 		}
-		@media screen and (max-width:375px) {
-			height: 25%;
-		}
-		@media screen and (max-width:360px){
-			height: 26%;
-		}
-		@media screen and (max-width:320px) {
-			height: 29%;
-		}
-		.way_center{
-			width: 85.7%;
-			height: 24.5%;
-			margin: 0 auto;
+		.list,.search,.write{
+			float: right;
+			width: 2.2rem;
+			height: 2.2rem;
+			margin-top: 0.9rem;
+			background-size: 100% 100%;
 			@media screen and (max-width:320px) {
-				width: 90%;
-			}
-			.way_box{
-				width: 100%;
-				height: 100%;
-				div{
-					line-height: 36px;
-					@media screen and (max-width:375px) {
-					line-height: 38px;
-					}
-				}
-				
-				.name{
-					font-size: 2rem;
-					float: left;
-					@media screen and (max-width:375px) {
-						font-size: 1.9rem;
-					}
-					@media screen and (max-width:320px) {
-						font-size: 1.7rem;
-					}
-				}
-				.gt{
-					font-size: 2rem;
-					color: #999999;
-					float: right;
-				}
+				width: 2rem;
+				height: 2rem;
+				margin-top: 1rem;
 			}
 		}
-		.line{
-			width: 100%;
-			border-bottom: 1px solid #cccccc;
+		.search,.write{
+			margin-right: 2.1rem;
+		}
+		.list{
+			background-image: url('../img/list.png');
+		}
+		.search{
+			background-image: url('../img/search.png');
+		}
+		.write{
+			background-image: url('../img/write.png');
+		}
+	}
+}
+.nav{
+	width: 100%;
+	background: #333333;
+	margin-top: 4rem;
+	.nav_container{
+		width: 91%;
+		height: 4.8rem;
+		line-height: 4.8rem;
+		margin: 0 auto;
+		@media screen and (max-width:320px){
+			height: 4rem;
+			line-height: 4rem;
+		}
+		.box{
+			float: left;
+			height: 4.7rem;
+			line-height: 4.7rem;
+			width: 5.87rem;
+			font-size: 2rem;
+			text-align: center;
+			color: #999999;
+			margin-left: 0.9rem;
+			@media screen and (min-width:414px) {
+				margin-left: 1.9rem;
+			}
+			@media screen and (min-width:375px){
+				margin-left: 1.2rem;
+			}
+			@media screen and (max-width:320px){
+				margin-left: 1rem;
+				width: 5rem;
+				height: 3.9rem;
+				line-height: 3.9rem;
+			}
+		}
+		.box_active{
+			color: #ffd35c;
+			border-bottom: 0.27rem solid #ffd35c;
 		}
 	}
 }
 .blank{
-	@media screen and (max-width:414px){
-		width: 100%;
-		height: 125px;
-		background: #eaeaea;	
-	}
-	@media screen and (max-width:375px){
-		width: 100%;
-		height: 115px;
-		background:#eaeaea;
-	}
-	@media screen and (max-width:360px){
-		width: 100%;
-		height: 110px;
-		background:#eaeaea;
-	}
-	@media screen and (max-width:320px){
-		width: 100%;
-		height: 98px;
-		background:#eaeaea;
-	}
-}	
-
-.lunbo{
+	width: 100%;
+	height: 0.8rem;
+	background: #eaeaea;
+}
+.ad{
+	width: 100%;
+	height: 13.77rem;
 	overflow: hidden;
 	position: relative;
-	@media screen and (max-width:414px){
-		width:100%;
-		height: 167px; 
-		background: red;
-	}
-	@media screen and (max-width:375px){
-		width: 100%;
-		height: 151px;
-		background: red;
-	}
-	@media screen and (max-width:360px){
-		width: 100%;
-		height: 145px;
-		background: red;
-	}
-	@media screen and (max-width:320px){
-		width: 100%;
-		height: 129px;
-		background: red;
-	}
-	.lunbo_container{
+	.ad_container{
+		width: 400%;
+		height: 13.77rem;
 		position: absolute;
-		width: 300%;
-		height: 100%;
 		img{
-			width: 33.3%;
-			height: 100%;
+			width: 25%;
+			height: 13.77rem;
 			float: left;
 		}
 	}
 }
-.blank1{
-	@media screen and (max-width:414px){
-		width: 100%;
-		height: 9px;
-		background: #eaeaea;	
-	}
-	@media screen and (max-width:320px){
-		width: 100%;
-		height: 8px;
-		background:#eaeaea;
-	}
-}
-.container{
-	@media screen and (max-width:414px){
-		width: 100%;
-		height: 230px;
-	}
-	.container_center{
-		position: relative;
+.inf{
+	width: 100%;
+	height: 20rem;
+	position: relative;
+	.inf_container{
 		width: 91%;
-		height: 100%;
+		height: 17.3rem;
 		margin: 0 auto;
-		.lxq,.jw{
-			float: left;
-			width: 14.8%;
-			margin-top: 15px;
+		.inf_top{
+			height: 100%;
+			height: 7.4rem;
+			position: relative;
+			border-bottom: 1px solid #c4c4c4;
+			overflow: hidden;
 		}
-		.info{
-			width: 80%;
-			margin-top: 20px;
-			margin-left: 10px;
-			float: left;
+		.pic{
+			position: absolute;
+			width: 4.93rem;
+			height: 100%;
+			img{
+				width: 4.93rem;
+				height: 4.93rem;
+				margin-top: 1.23rem;
+			}
+		}
+		.more_top{
+			margin-top: 1.3rem;
+			margin-left: 5.87rem;
+			overflow: hidden;
 			.name{
 				font-size: 2rem;
-				
 			}
 			img{
-				margin-left: 5px;
-				position: absolute;
-				width: 6%
+				width: 1.67rem;
+				height: 1.67rem;
 			}
-			.eat,.movie{
-				background: #c4c4c4;
+			.eat{
 				display: inline-block;
-				width: 37px;
-				height: 18.2px;
-				text-align: center;
-				line-height: 18.2px;
-				color: #fff;
-				font-size: 1.5rem;
-				border:1px solid #c4c4c4;
-				border-radius: 10px;
-				position: absolute;
-				right: 0;			
-			}
-			p{
-				font-size: 1.5rem;
-				color: #666666;
-			}
-		}
-		.line{
-			clear: both;
-			border-bottom: 1px solid #c4c4c4;
-			width: 100%;
-		}
-		p{
-			margin-top: 10px;
-			margin-bottom: 10px;
-			font-size: 2rem;
-		}
-		.about{
-			width: 100%;
-			margin-top: 8px;
-			img{
-				width: 4%;
-			}
-			span{
-				margin-left: 5px;
-				font-size: 1.5rem;
-				color: #666666;
-			}
-			.minutes{
 				float: right;
+				margin-top: 0.5rem;
+				width: 3.13rem;
+				height: 1.47rem;
+				line-height: 1.47rem;
+				border: 1px solid #c4c4c4;
+				border-radius: 1.5rem;
+				background: #c4c4c4;
 				font-size: 1.5rem;
-				color: #666666;
-			}
-		}
-		.tool{
-			@media screen and (max-width:414px){
-				width: 100%;
-				position: absolute;
-				bottom: 10px;
-			}
-			div{
-				width: 33.3%;
-				height: 100%;
-				font-size: 1.5rem;
-				color: #666666;
+				color: #fff;
 				text-align: center;
-				float: left;
 			}
 		}
+		.more_bottom{
+			color: #c4c4c4;
+			font-size: 1.5rem;
+			margin-left: 5.87rem;
 
+		}
+		.inf_bottom{
+			.words{
+				font-size: 2rem;
+			}
+		}
+		.time{
+			position: relative;
+			margin-top: 1rem;
+		}
+		.loc{
+			position: relative;
+			margin-top: 0.3rem;
+			.when_time{
+				position: absolute;
+				right: 0;
+			}
+		}
+		.time,.loc{
+			font-size: 1.5rem;
+			color: #c4c4c4;
+			img{
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+			.when{
+				position: relative;
+				top: -0.3rem;
+			}
+		}
 	}
-	
+	.tool{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		.box{
+			float: left;
+			width: 33.3%;
+			text-align: center;
+			color: #c4c4c4;
+			font-size: 1.5rem;
+			border-right: 1px solid #c4c4c4;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box; /* Firefox */
+			-webkit-box-sizing: border-box; /* Safari */	
+		}
+	}
 }
+
+	

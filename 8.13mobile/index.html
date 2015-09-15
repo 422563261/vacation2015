@@ -2,166 +2,404 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>index</title>
+	<title>一起约</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="header">
-		<div class="fun">
-			<div class="fun_center">
-				<div class="title">一起约</div>
-				<img class="list" id="list" src="img/list.png">
-				<img class="search" src="img/search.png">
-				<img class="write" src="img/write.png">
+	<!-- 遮罩层 -->
+	<div class="hide"></div>
+
+
+	<!-- 隐藏列表 -->
+	<div class="hide_list">
+		<div class="tool">
+			<div class="sure">确定</div>
+			<div class="cancel">取消</div>
+		</div>
+		<div class="choose" id="type">
+			<div class="words">请选择约会类型</div>
+			<img src="img/kind.png" class="type kind">
+		</div>
+		<div class="choose_type choose_boss">
+			<div class="choose_box">
+				<div class="words">运动</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">拼车</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">娱乐</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">自习</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">棋牌</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">吃饭</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">旅游</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">其他</div>
 			</div>
 		</div>
-		<div class="nav">
-			<div class="nav_center">
-				<div class="box box_active box1">首页<div class="active"></div></div>
-				<div class="box box2">发现</div>
-				<div class="box box3"><div class="notice"></div>消息</div>
-				<div class="box box4">我</div>
+		<div class="choose" id="way">
+			<div class="words">排序方式</div>
+			<img src="img/kind.png" class="way kind">
+		</div>
+		<div class="choose_way choose_boss">
+			<div class="choose_box">
+				<div class="words">运动</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">拼车</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">娱乐</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">自习</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">棋牌</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">吃饭</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">旅游</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">其他</div>
+			</div>
+		</div>
+		<div class="choose" id="sexy">
+			<div class="words">性别</div>
+			<img src="img/kind.png" class="sexy kind">
+		</div>
+		<div class="choose_sexy choose_boss">
+			<div class="choose_box">
+				<div class="words">运动</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">拼车</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">娱乐</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">自习</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">棋牌</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">吃饭</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">旅游</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">其他</div>
+			</div>
+		</div>
+		<div class="choose" id="pay">
+			<div class="words">消费</div>
+			<img src="img/kind.png" class="pay kind">
+		</div>
+		<div class="choose_pay choose_boss">
+			<div class="choose_box">
+				<div class="words">运动</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">拼车</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">娱乐</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">自习</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">棋牌</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">吃饭</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">旅游</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">其他</div>
+			</div>
+		</div>
+		<div class="choose" id="time">
+			<div class="words">时间</div>
+			<img src="img/kind.png" class="time kind">
+		</div>
+		<div class="choose_time choose_boss">
+			<div class="choose_box">
+				<div class="words">运动</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">拼车</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">娱乐</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">自习</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">棋牌</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">吃饭</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">旅游</div>
+			</div>
+			<div class="choose_box">
+				<div class="words">其他</div>
 			</div>
 		</div>
 	</div>
 
-	 <div id="dark"></div>
 
-	<div class="choose" id="choose">
-		<div class="choose_head">
-			<div class="choose_head_fun">
-				<div class="sure" id="sure">确定</div>
-				<div class="cancel" id="cancel">取消</div>
-			</div>
-			<div class="choose_head_kind">
-				<div class="word">请选择约会类型</div>
-				<div class="kind" id="kind"></div>
-			</div>
-		</div>	
-		<div class="choose_container" id="choose_container">
-			<div class="choose_box">运动</div>
-			<div class="line"></div>
-			<div class="choose_box">拼车</div>
-			<div class="line"></div>
-			<div class="choose_box">娱乐</div>
-			<div class="line"></div>
-			<div class="choose_box">自习</div>
-			<div class="line"></div>
-			<div class="choose_box">棋牌</div>
-			<div class="line"></div>
-			<div class="choose_box">吃饭</div>
-			<div class="line"></div>
-			<div class="choose_box">旅游</div>
-			<div class="line"></div>
-			<div class="choose_box">其他</div>
-			<div class="line"></div>
-		</div>
-		<div class="choose_way">
-			<div class="way_center">
-				<div class="way_box">
-					<div class="name">排序方式</div>
-					<div class="gt">&gt</div>
-				</div>
-			</div>
-			<div class="line"></div>
-			<div class="way_center">
-				<div class="way_box">
-					<div class="name">性别</div>
-					<div class="gt">&gt</div>
-				</div>
-			</div>
-			<div class="line"></div>
-			<div class="way_center">
-				<div class="way_box">
-					<div class="name">消费</div>
-					<div class="gt">&gt</div>
-				</div>
-			</div>
-			<div class="line"></div>
-			<div class="way_center">
-				<div class="way_box">
-					<div class="name">时间</div>
-					<div class="gt">&gt</div>
-				</div>
-			</div>
-			<div class="line"></div>
+	<!-- 头部导航 -->
+	<div class="head">
+		<div class="head_container">
+			<div class="yue">一起约</div>
+			<div class="list"></div>
+			<div class="search"></div>
+			<div class="write"></div>
 		</div>
 	</div>
+
+	<!-- 导航栏 -->
+	<div class="nav">
+		<div class="nav_container">
+			<div class="box box_active" id="first">首页</div>
+			<div class="box" id="find">发现</div>
+			<div class="box" id="message">消息</div>
+			<div class="box" id="me">我</div>
+		</div>
+	</div>
+
 	<div class="blank"></div>
-	<div class="lunbo">
-		<div class="lunbo_container" id="lunbo_container" style="left:-100%;">
+
+	<!-- 广告位 -->
+	<div class="ad">
+		<div class="ad_container">
 			<img src="img/pic1.png">
 			<img src="img/pic2.png">
 			<img src="img/pic3.png">
+			<img src="img/pic1.png">
 		</div>
 	</div>
-	<div class="blank1"></div>
-	<div class="container">
-		<div class="container_center">
-			<img class="lxq" src="img/lxq.png">
-			<div class="info">
-				<span class="name">刘晓庆</span><img src="img/female.png"><span class="eat">吃饭</span>
-				<br>
-				<p>生命不息，折腾不止</p>
+
+	<div class="blank"></div>
+
+	<!-- 详细信息 -->
+	<div class="inf">
+		<div class="inf_container">
+			<div class="inf_top">
+				<div class="pic">
+					<img src="img/lxq.png">
+				</div>
+				<div class="more_top">
+					<span class="name">刘晓庆</span>
+					<img src="img/female.png">
+					<span class="eat">吃饭</span>
+				</div>
+				<div class="more_bottom">生命不息，折腾不止</div>
 			</div>
-			<div class="line"></div>
-			<p>下午一起去吃饭，有约的吗？</p>
-			<div class="about"><img src="img/time.png"><span>6:00</span></div>
-			<div class="about"><img src="img/location.png"><span>老校门</span></div>
-			<div class="about"><img src="img/money.png"><span>我请客</span><span class="minutes">3分钟前</span></div>
-			<div class="tool">
-				<div>报名：10</div>
-				<div>评论：2</div>
-				<div>点赞：17</div>
+			<div class="inf_bottom">
+				<div class="words">下午一起去吃饭，有约的吗？</div>
 			</div>
-		</div>
-	</div>
-	<div class="blank1"></div>
-	<div class="container">
-		<div class="container_center">
-			<img class="jw" src="img/jw.png">
-			<div class="info">
-				<span class="name">姜文</span><img src="img/male.png"><span class="movie">电影</span>
-				<br>
-				<p>生命不息，折腾不止</p>
+			<div class="time">
+				<img src="img/time.png">
+				<span class="when">6:00</span>
 			</div>
-			<div class="line"></div>
-			<p>下午一起去拍电影，有约吗？</p>
-			<div class="about"><img src="img/time.png"><span>6:00</span></div>
-			<div class="about"><img src="img/location.png"><span>老校门</span></div>
-			<div class="about"><img src="img/money.png"><span>我请客</span><span class="minutes">3分钟前</span></div>
-			<div class="tool">
-				<div>报名：10</div>
-				<div>评论：2</div>
-				<div>点赞：17</div>
+			<div class="loc">
+				<img src="img/location.png">
+				<span class="when">老校门口</span>
+			</div>
+			<div class="loc">
+				<img src="img/money.png">
+				<span class="when">我请客</span>
+				<span class="when_time">3</span>
 			</div>
 		</div>
+		<div class="tool">
+			<div class="box">报名：10</div>
+			<div class="box">评论：2</div>
+			<div class="box">点赞：17</div>
+		</div>
 	</div>
-	<div class="blank1"></div>
-	<div class="container">
-		<div class="container_center">
-			<img class="jw" src="img/jw.png">
-			<div class="info">
-				<span class="name">姜文</span><img src="img/male.png"><span class="movie">电影</span>
-				<br>
-				<p>生命不息，折腾不止</p>
+	<div class="blank"></div>
+
+	<!-- 详细信息 -->
+	<div class="inf">
+		<div class="inf_container">
+			<div class="inf_top">
+				<div class="pic">
+					<img src="img/lxq.png">
+				</div>
+				<div class="more_top">
+					<span class="name">刘晓庆</span>
+					<img src="img/female.png">
+					<span class="eat">吃饭</span>
+				</div>
+				<div class="more_bottom">生命不息，折腾不止</div>
 			</div>
-			<div class="line"></div>
-			<p>下午一起去拍电影，有约吗？</p>
-			<div class="about"><img src="img/time.png"><span>6:00</span></div>
-			<div class="about"><img src="img/location.png"><span>老校门</span></div>
-			<div class="about"><img src="img/money.png"><span>我请客</span><span class="minutes">3分钟前</span></div>
-			<div class="tool">
-				<div>报名：10</div>
-				<div>评论：2</div>
-				<div>点赞：17</div>
+			<div class="inf_bottom">
+				<div class="words">下午一起去吃饭，有约的吗？</div>
 			</div>
+			<div class="time">
+				<img src="img/time.png">
+				<span class="when">6:00</span>
+			</div>
+			<div class="loc">
+				<img src="img/location.png">
+				<span class="when">老校门口</span>
+			</div>
+			<div class="loc">
+				<img src="img/money.png">
+				<span class="when">我请客</span>
+				<span class="when_time">3</span>
+			</div>
+		</div>
+		<div class="tool">
+			<div class="box">报名：10</div>
+			<div class="box">评论：2</div>
+			<div class="box">点赞：17</div>
+		</div>
+	</div>
+	<div class="blank"></div>
+
+	<!-- 详细信息 -->
+	<div class="inf">
+		<div class="inf_container">
+			<div class="inf_top">
+				<div class="pic">
+					<img src="img/lxq.png">
+				</div>
+				<div class="more_top">
+					<span class="name">刘晓庆</span>
+					<img src="img/female.png">
+					<span class="eat">吃饭</span>
+				</div>
+				<div class="more_bottom">生命不息，折腾不止</div>
+			</div>
+			<div class="inf_bottom">
+				<div class="words">下午一起去吃饭，有约的吗？</div>
+			</div>
+			<div class="time">
+				<img src="img/time.png">
+				<span class="when">6:00</span>
+			</div>
+			<div class="loc">
+				<img src="img/location.png">
+				<span class="when">老校门口</span>
+			</div>
+			<div class="loc">
+				<img src="img/money.png">
+				<span class="when">我请客</span>
+				<span class="when_time">3</span>
+			</div>
+		</div>
+		<div class="tool">
+			<div class="box">报名：10</div>
+			<div class="box">评论：2</div>
+			<div class="box">点赞：17</div>
+		</div>
+	</div>
+	<div class="blank"></div>
+
+	<!-- 详细信息 -->
+	<div class="inf">
+		<div class="inf_container">
+			<div class="inf_top">
+				<div class="pic">
+					<img src="img/lxq.png">
+				</div>
+				<div class="more_top">
+					<span class="name">刘晓庆</span>
+					<img src="img/female.png">
+					<span class="eat">吃饭</span>
+				</div>
+				<div class="more_bottom">生命不息，折腾不止</div>
+			</div>
+			<div class="inf_bottom">
+				<div class="words">下午一起去吃饭，有约的吗？</div>
+			</div>
+			<div class="time">
+				<img src="img/time.png">
+				<span class="when">6:00</span>
+			</div>
+			<div class="loc">
+				<img src="img/location.png">
+				<span class="when">老校门口</span>
+			</div>
+			<div class="loc">
+				<img src="img/money.png">
+				<span class="when">我请客</span>
+				<span class="when_time">3</span>
+			</div>
+		</div>
+		<div class="tool">
+			<div class="box">报名：10</div>
+			<div class="box">评论：2</div>
+			<div class="box">点赞：17</div>
+		</div>
+	</div>
+	<div class="blank"></div>
+
+	<!-- 详细信息 -->
+	<div class="inf">
+		<div class="inf_container">
+			<div class="inf_top">
+				<div class="pic">
+					<img src="img/lxq.png">
+				</div>
+				<div class="more_top">
+					<span class="name">刘晓庆</span>
+					<img src="img/female.png">
+					<span class="eat">吃饭</span>
+				</div>
+				<div class="more_bottom">生命不息，折腾不止</div>
+			</div>
+			<div class="inf_bottom">
+				<div class="words">下午一起去吃饭，有约的吗？</div>
+			</div>
+			<div class="time">
+				<img src="img/time.png">
+				<span class="when">6:00</span>
+			</div>
+			<div class="loc">
+				<img src="img/location.png">
+				<span class="when">老校门口</span>
+			</div>
+			<div class="loc">
+				<img src="img/money.png">
+				<span class="when">我请客</span>
+				<span class="when_time">3</span>
+			</div>
+		</div>
+		<div class="tool">
+			<div class="box">报名：10</div>
+			<div class="box">评论：2</div>
+			<div class="box">点赞：17</div>
 		</div>
 	</div>
 </body>
+<script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/way.js"></script>
-<script src="js/lunbo.js"></script>
 </html>
