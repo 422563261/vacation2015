@@ -1,6 +1,6 @@
-var fs = require('fs');
+var fs   = require('fs');
 var http = require("http");
-var url = require('url');
+var url  = require('url');
 
 
 
@@ -41,5 +41,5 @@ function bathroom (req,res) {
         }
     });
 }
-exports.home = home;
+exports.home     = home;
 exports.bathroom = bathroom;

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>page</title>
+	<style>
+		*{padding: 0;margin: 0;}
+		body{
+			font-family: Arial, "Hiragino Sans GB", "Microsoft YaHei",  "WenQuanYi Micro Hei", sans-serif;
+			/*background: #adadad;*/
+		}
+		#bd{
+			background: #554843;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: -1;
+			opacity:1;
+			-webkit-transition:opacity 1s;
+		}
+		#page{
+			display: block;
+			font-size: 50px;
+			color: #554843;
+			margin-top: 50px;
+			text-align: center;
+			-webkit-animation:myway 3s linear 0.5s;
+			-webkit-animation-fill-mode:forwards;
+		}
+		@keyframes myway{
+			from{color: #554843; }
+			to{color: #ffffff;}
+		}
+		.container{
+			width: 100%;
+			padding-top: 5px;
+			text-align: right;
+		}
+		.container a{
+			cursor: pointer;
+		}
+		#signin,#signup{
+			margin-right: 15px;
+			font-size: 15px;
+			text-decoration: none;
+			color: #554843;
+			-webkit-animation:myway 3s linear 0.5s;
+			-webkit-animation-fill-mode:both;
+		}
+		#signin:hover{
+			
+		}
+		#signup:hover{
+			color: #FFD39B
+		}
+		.box,.box1{
+			width: 400px;
+			height: 240px;
+			background: rgba(0,0,0,0);
+			color: #ffffff;
+			position: absolute;
+			display: none;
+			margin: auto;
+			top:0;right: 0;bottom: 0;left: 0;
+		}
+		.box1{
+			height: 500px;
+
+		}
+		.login,.register{
+			width: 304px;
+			margin: 50px auto;
+		}
+		#username,#password,#new_username,#new_password,#new_email,#new_QQ{
+			width: 200px;
+			height: 20px;
+			display: inline-block;
+			margin-left: 50px;
+			border: 2px solid #10ddea;
+			border-radius: 10px;
+			display: block;
+			background: rgba(0,0,0,0);
+			color: #ffffff;
+		}
+		#new_username,#new_password,#new_email,#new_QQ{
+			border: 2px solid #ff6f30;
+		}
+		p{text-align: center;margin-bottom: 5px;}
+		.forget {
+			float: right;
+			margin-top: 10px;
+		}
+		.forget a{
+			font-size: 10px;
+			color: #a2a2a3;
+			text-decoration: none;
+		}
+		.forget a:hover{color: #ffffff}
+		.submit{
+			width: 100%;
+			height: 30px;
+			margin-top: 30px;
+			line-height: 1px;
+			font-size: 20px;
+			border: 2px solid #ca193e;
+			border-radius: 10px;
+			background: rgba(0,0,0,0);
+			color: #ffffff;
+		}
+	</style>
+</head>
+<body>
+	<div id="bd"></div>
+	<div class="container">
+		<a id="signin">Sign in</a>
+		<a id="signup">Sign up</a>
+	</div>
+	<h1 id="page">欢迎来到此页面</h1>
+	<div class="box" id="box">
+		<form action="" class="login">
+			<p id="username_erro">Username:</p>
+			<input type="text" id="username">
+			<br>
+			<p id="password_erro">Password:</p>
+			<input type="password" id="password">
+			<div class="forget"><a href="#">forget?</a></div>
+			<input type="submit" class="submit" value="Sign in">
+		</form>
+	</div>
+	<div class="box1" id="box1">
+		<form action="" class="register">
+			<p id="new_username_erro">Please input your name:</p>
+			<input type="text" id="new_username">
+			<br>
+			<p id="new_password_erro">Please input your passwords:</p>
+			<input type="password" id="new_password">
+			<br>
+			<p id="new_email_erro">Please input your e-mail:</p>
+			<input type="email" id="new_email">
+			<br>
+			<p id="new_QQ_erro">Please input your QQ:</p>
+			<input type="text" id="new_QQ">
+			<input type="submit" class="submit" value="Sign up">
+		</form>
+		
+	</div>
+	
+</body>
+<script>
+	var signin = document.getElementById('signin');
+	var signup = document.getElementById('signup');
+	var box = document.getElementById('box');
+	var box1 = document.getElementById('box1');
+	var bd = document.getElementById('bd');
+	var page = document.getElementById('page');
+	var username = document.getElementById('username');
+	var password = document.getElementById('password');
+	var new_username = document.getElementById('new_username');
+	var new_email = document.getElementById('new_email');
+	var new_password = document.getElementById('new_password');
+	var new_QQ = document.getElementById('new_QQ');
+	var username_erro = document.getElementById('username_erro');
+	var password_erro = document.getElementById('password_erro');
+	var new_username_erro = document.getElementById('new_username_erro');
+	var new_email_erro = document.getElementById('new_email_erro');
+	var new_password_erro = document.getElementById('new_password_erro');
+	var new_QQ_erro = document.getElementById('new_QQ_erro');
+
+	signin.onclick = function(){
+		box.style.display = "block";
+		bd.style.opacity = '0.6';
+		box1.style.display = 'none';
+		page.style.display = 'block';
+
+	}
+	signup.onclick = function(){
+		box1.style.display = "block";
+		bd.style.opacity = '0.6';
+		box.style.display = 'none';
+		page.style.display = 'none';
+	}
+	new_username.onblur = function(){
+		var length = new_username.value.length;
+		if(new_username.value.replace(/\s+/,'') == ''){
+			new_username_erro.style.color = 'red';
+			new_username_erro.innerHTML = 'illegal space';
+		}		
+		else{
+			new_username_erro.style.color = 'green';
+			new_username_erro.innerHTML = 'OK';
+		}
+	}
+	new_password.onblur = function(){
+		var length = new_password.value.length;
+		if (length>0&&length<7) {
+			new_password_erro.style.color = 'green';
+			new_password_erro.innerHTML = 'OK';
+		}
+		else{
+			new_password_erro.style.color = 'red';
+			new_password_erro.innerHTML = 'illegal(0<7)';
+		}
+	}
+	new_email.onblur = function() {
+		var apos = new_email.value.indexOf("@");
+		var	dotpos = new_email.value.lastIndexOf(".");
+		if (apos<1||dotpos-apos<2) {
+			new_email_erro.style.color = 'red';
+			new_email_erro.innerHTML = 'illegal';
+		}
+		else{
+			new_email_erro.style.color = 'green';
+			new_email_erro.innerHTML = 'OK';
+		}
+	}
+	new_QQ.onblur = function(){
+		var length = new_QQ.value.length;
+		if (length>3&&length<11) {
+			new_QQ_erro.style.color = 'green';
+			new_QQ_erro.innerHTML = 'OK';
+		}
+		else{
+			new_QQ_erro.style.color = 'red';
+			new_QQ_erro.innerHTML = 'illegal(3<11)';
+		}
+	}
+</script>
+</html>
